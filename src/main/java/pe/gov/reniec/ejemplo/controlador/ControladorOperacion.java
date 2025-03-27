@@ -12,12 +12,19 @@ public class ControladorOperacion {
     @GetMapping("/sumar")
     @Operation(summary = "Suma dos números", description = "Devuelve la suma de dos números")
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "Operación exitosa"),
             @ApiResponse(responseCode = "400", description = "Parámetros inválidos")
     })
     public double sumar(@RequestParam double num1, @RequestParam double num2) {
         return num1 + num2;
     }
 
-    // Agrega los demás métodos (restar, multiplicar, dividir) de manera similar
+    @GetMapping("/restar")
+    @Operation(summary = "Rests dos números", description = "Devuelve la resta de dos números")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "400", description = "Parámetros inválidos")
+    })
+    public double sumar(@RequestParam double num1, @RequestParam double num2) {
+        return num1 - num2;
+    }
+
 }
